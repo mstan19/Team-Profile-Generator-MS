@@ -1,4 +1,4 @@
-const Profile = require("../profile");
+const Profile = require("../index");
 
 describe("Profile", () => {
     it
