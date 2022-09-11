@@ -8,7 +8,18 @@ inquirer
             type: 'input',
             name: 'projectName',
             message: 'What is the name of the project?',
-        }
+        },
+        {
+            type: "input",
+            message: "Please enter id:",
+            name: "id",
+            validate: (answer) => {
+              if (isNaN(answer)) {
+                return "please enter a number";
+              }
+              return true;
+            },
+        },
     ])
     .then((answers) => {
         const htmlTPContent = generateHTML(answers);

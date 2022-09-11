@@ -14,6 +14,21 @@ describe("getId ()", () => {
         let result = newEmp.getId();
         expect(result).toEqual(2);
     });
+    it("Incorrect when input is not a number", () => {
+        const emp = () => new Empolyee("maze","2","wow@gmail");
+        const err = new Error ("Id needs to be positive integer")
+        expect(emp).toThrowError(err); 
+    });
+    it("Incorrect when input is not a number", () => {
+        const emp = () => new Empolyee("maze","","wow@gmail");
+        const err = new Error ("Id needs to be positive integer")
+        expect(emp).toThrowError(err); 
+    });
+    it("Incorrect when input is not a number", () => {
+        const emp = () => new Empolyee("maze", -2,"wow@gmail");
+        const err = new Error ("Id needs to be positive integer")
+        expect(emp).toThrowError(err); 
+    });
 });
 
 describe("getEmail ()", () => {
@@ -26,7 +41,7 @@ describe("getEmail ()", () => {
 
 describe("getRole ()", () => {
     it("should return 'empolyee'" , () => {
-        let emp = new Empolyee();
+        let emp = new Empolyee("maze",2,"wow@gmail");
         let result = emp.getRole();
         expect(result).toEqual("Empolyee");
     });
