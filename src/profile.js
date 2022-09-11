@@ -28,4 +28,4 @@ const generateHTML = ({name,jobIcon,occupation,id,email,GHusername,officeNum,sch
 </body>
 </html>`;
 
-module.exports = Profile;
+module.exports = generateHTML;
