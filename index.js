@@ -1,4 +1,4 @@
-const generateHTML = require("./src/profile.js");
+let generateHTML = require("./src/profile.js");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Manager = require("./lib/manager");
@@ -69,8 +69,6 @@ let selectOccupation = [
             "I don't want to add any more team members",
         ],
     },
-    // make inqurier and ask other questions
-    // in a .then get occ and match by questons
 ];
 let engineerQuestions = [
     {
@@ -123,7 +121,7 @@ function otherMember() {
         console.log(answersselectOcc);
         if (answersselectOcc.occupation === "Engineer") {
             inquirer.prompt(engineerQuestions).then((answersE) => {
-                console.log(answersselectOcc.occupation);
+                // console.log(answersselectOcc.occupation);
 
                 const engineer = new Engineer(
                     answersE.name,
@@ -147,27 +145,38 @@ function otherMember() {
             });
             
         } else {
-            const htmlTPContent = generateHTML(answers);
-
-            fs.writeFile("index.html", htmlTPContent, (err) =>
+            console.log("1test")
+            let htmlTPContent = generateHTML({name,jobIcon,occupation,id,email,GHusername,officeNum,school});
+            console.log("2test")
+            fs.writeFile(`./src/index.html`, htmlTPContent, (err) =>
                 err
                     ? console.err(
-                        "Failed to generate index.html for the Team Profile file"
+                        "Failed to generate index.html for the Team Profile file."
                     )
                     : console.log(
                         "Successfully created index.html for the Team Profile file!"
                     )
             );
         }
-      
     });
 }
 
+function writeFile() {
+    fs.writeFile(`./src/index.html`, htmlTPContent, (err) =>
+        err
+            ? console.err(
+                "Failed to generate index.html for the Team Profile file."
+            )
+            : console.log(
+                "Successfully created index.html for the Team Profile file!"
+            )
+    );
+}
 // console.log("testing")
 function startQ() {
     // console.log("startQ")
     inquirer.prompt(managerQuestions).then((answersM) => {
-        console.log(answersM);
+        // console.log(answersM);
         // make instances for new manager
         const manager = new Manager(
             answersM.name,

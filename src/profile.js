@@ -1,4 +1,4 @@
-const generateHTML = ({name,jobIcon,occupation,id,email,GHusername,officeNum,school}) =>
+let generateHTML = ({name,jobIcon,occupation,id,email,GHusername,officeNum,school}) =>
 `<!DOCTYPE html>
 <html lang="en">
 <head>
