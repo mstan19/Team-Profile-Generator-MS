@@ -1,4 +1,4 @@
-// const generateHTML = require('./src/profile.js');
+const generateHTML = require("./src/profile.js");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Manager = require("./lib/manager");
@@ -36,172 +36,147 @@ const Intern = require("./lib/intern");
 // </body>
 // </html>`;
 let managerQuestions = [
-	{
-		type: "input",
-		name: "name",
-		message: "What is the team manager's name?",
-		// when: (answers) => {
-		//   if (answers.occupation === "Manager")
-		//     return true;
-		//   }
-	},
-	{
-		type: "input",
-		name: "id",
-		message: "What is the team manager's id?",
-		// when: (answers) => {
-		//   if (answers.occupation === "Manager")
-		//     return true;
-		// }
-	},
-	{
-		type: "input",
-		name: "email",
-		message: "What is the team manager's email?",
-		//   when: (answers) => {
-		//     if (answers.occupation === "Manager")
-		//       return true;
-		//     }
-	},
-	{
-		type: "input",
-		name: "officeNum",
-		message: "What is the team manager's office number?",
-		// when: (answers) => {
-		//   if (answers.occupation === "Manager")
-		//     return true;
-		//   }
-	},
+    {
+        type: "input",
+        name: "name",
+        message: "What is the team manager's name?"
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the team manager's id?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the team manager's email?"
+    },
+    {
+        type: "input",
+        name: "officeNum",
+        message: "What is the team manager's office number?"
+    },
 ];
 
 let selectOccupation = [
-	{
-		type: "list",
-		name: "occupation",
-		message: "Which type of team member would you like to add?",
-		choices: [
-			"Intern",
-			"Engineer",
-			"I don't want to add any more team members",
-		],
-	},
-	// make inqurier and ask other questions
-	// in a .then get occ and match by questons
+    {
+        type: "list",
+        name: "occupation",
+        message: "Which type of team member would you like to add?",
+        choices: [
+            "Intern",
+            "Engineer",
+            "I don't want to add any more team members",
+        ],
+    },
+    // make inqurier and ask other questions
+    // in a .then get occ and match by questons
 ];
 let engineerQuestions = [
-	{
-		type: "input",
-		name: "name",
-		message: "What is your engineer's name?",
-	},
-	{
-		type: "input",
-		name: "id",
-		message: "What is your engineer's id?",
-	},
-	{
-		type: "input",
-		name: "email",
-		message: "What is your engineer's email?",
-	},
-	{
-		type: "input",
-		name: "GHusername",
-		message: "What is your engineer's GitHub username?",
-	},
+    {
+        type: "input",
+        name: "name",
+        message: "What is your engineer's name?",
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is your engineer's id?",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your engineer's email?",
+    },
+    {
+        type: "input",
+        name: "GHusername",
+        message: "What is your engineer's GitHub username?",
+    },
 ];
-function otherMember() {
-	inquirer.prompt(selectOccupation).then((answersselectOcc) => {
-		console.log(answersselectOcc);
-		switch (answersselectOcc.occupation) {
-			case Engineer:
-				inquirer.prompt(engineerQuestions).then((answersE) => {
-					const engineer = new Engineer(
-						answersE.name,
-						answersE.id,
-						answersE.email,
-						answersE.GHusername
-					);
-				});
-				break;
-			case Intern:
-				inquirer.prompt(internQuestions).then((answersI) => {
-					const intern = new Intern(
-						answersI.name,
-						answersI.id,
-						answersI.email,
-						answersI.school
-					);
-				});
-				break;
-	}
-		// {
-		//   type: 'input',
-		//   name: 'name',
-		//   message: "What is your intern's name?",
-		//   // when: (answers) => {
-		//   //   if (answers.occupation === "Intern")
-		//   //     return true;
-		//   //   }
-		// },
-		// {
-		//   type: 'input',
-		//   name: 'id',
-		//   message: "What is your intern's id?",
-		//   // when: (answers) => {
-		//   //   if (answers.occupation === "Intern")
-		//   //     return true;
-		//   //   }
-		// },
-		// {
-		//   type: 'input',
-		//   name: 'email',
-		//   message: "What is your intern's email?",
-		//   // when: (answers) => {
-		//   //   if (answers.occupation === "Intern")
-		//   //     return true;
-		//   //   }
-		// },
-		// {
-		//   type: 'input',
-		//   name: "school",
-		//   message: "What is your intern's school?",
-		//   // when: (answers) => {
-		//   //   if (answers.occupation === "Intern")
-		//   //     return true;
-		//   //   }
-		// },
-	});
-}
 
+let internQuestions = [
+    {
+        type: 'input',
+        name: 'name',
+        message: "What is your intern's name?"
+    },
+    {
+        type: 'input',
+        name: 'id',
+        message: "What is your intern's id?"
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: "What is your intern's email?"
+    },
+    {
+        type: 'input',
+        name: "school",
+        message: "What is your intern's school?"
+    }
+]
+
+function otherMember() {
+    inquirer.prompt(selectOccupation).then((answersselectOcc) => {
+        console.log(answersselectOcc);
+        if (answersselectOcc.occupation === "Engineer") {
+            inquirer.prompt(engineerQuestions).then((answersE) => {
+                console.log(answersselectOcc.occupation);
+
+                const engineer = new Engineer(
+                    answersE.name,
+                    answersE.id,
+                    answersE.email,
+                    answersE.GHusername
+                );
+            otherMember();
+            });
+            //go back to questions
+            
+        } else if (answersselectOcc.occupation === "Intern") {
+            inquirer.prompt(internQuestions).then((answersI) => {
+                const intern = new Intern(
+                    answersI.name,
+                    answersI.id,
+                    answersI.email,
+                    answersI.school
+                );
+            otherMember();
+            });
+            
+        } else {
+            const htmlTPContent = generateHTML(answers);
+
+            fs.writeFile("index.html", htmlTPContent, (err) =>
+                err
+                    ? console.err(
+                        "Failed to generate index.html for the Team Profile file"
+                    )
+                    : console.log(
+                        "Successfully created index.html for the Team Profile file!"
+                    )
+            );
+        }
+      
+    });
+}
 
 // console.log("testing")
 function startQ() {
-	// console.log("startQ")
-	inquirer.prompt(managerQuestions).then((answersM) => {
-		console.log(answersM);
-		// make instances for new manager
-		const manager = new Manager(
-			answersM.name,
-			answersM.id,
-			answersM.email,
-			answersM.officeNum
-		);
+    // console.log("startQ")
+    inquirer.prompt(managerQuestions).then((answersM) => {
+        console.log(answersM);
+        // make instances for new manager
+        const manager = new Manager(
+            answersM.name,
+            answersM.id,
+            answersM.email,
+            answersM.officeNum
+        );
 
-		otherMember();
-
-		// console log answers. then grab those occupations answers -> if statement for the occ
-		// use arrray for occ like manager (prompt))
-	});
+        otherMember();
+    });
 }
-
-// .then((answers) => {
-console.log("end");
-
-//     const htmlTPContent = generateHTML(answers);
-
-//     fs.writeFile('index.html', htmlTPContent, (err) =>
-//       err ? console.err("Failed to generate index.html for the Team Profile file") : console.log('Successfully created index.html for the Team Profile file!')
-//     );
-// });
 startQ();
