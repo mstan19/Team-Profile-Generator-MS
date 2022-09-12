@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/mstan19/Team-Profile-Generator-MS#readme",
   "dependencies": {
+    "bootstrap": "^5.2.1",
+    "font-awesome": "^4.7.0",
     "inquirer": "^8.2.4"
   },
   "devDependencies": {

@@ -1,11 +1,13 @@
-let generateHTML = require("./src/profile.js");
+let addingStr = require("./src/profile.js");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Employee = require("./lib/employee");
 const Intern = require("./lib/intern");
-let staff = [];
+let allManagers = [];
+let allEngineers = [];
+let allinterns = [];
 
 let selectOccupation = [
     {
@@ -111,7 +113,7 @@ function engineerMenu() {
             answersE.email,
             answersE.GHusername
         );
-        staff.push(engineer);
+        allEngineers.push(engineer);
         mainMenu();
     });
 }
@@ -125,7 +127,7 @@ function internMenu() {
             answersI.email,
             answersI.school
         );
-        staff.push(intern);
+        allinterns.push(intern);
         mainMenu();
     });
 }
@@ -139,26 +141,14 @@ function managerMenu() {
             answersM.email,
             answersM.officeNum
         );
-        staff.push(manager);
+        allManagers.push(manager);
         mainMenu();
     });
 }
 
 function writeFile() {
-
-    fs.writeFile(`./src/index.html`, htmlTPContent, (err) =>
-        err
-            ? console.err(
-                "Failed to generate index.html for the Team Profile file."
-            )
-            : console.log(
-                "Successfully created index.html for the Team Profile file!"
-            )
-    );
-    // console.log("1test")
-    let htmlTPContent = generateHTML({name,jobIcon,occupation,id,email,GHusername,officeNum,school});
-    console.log("2test")
-    fs.writeFile(`./src/index.html`, htmlTPContent, (err) =>
+    let htmlTPContent = addingStr(allManagers, allinterns, allEngineers);
+    fs.writeFile(`./dist/index.html`, htmlTPContent, (err) =>
         err
             ? console.err(
                 "Failed to generate index.html for the Team Profile file."
