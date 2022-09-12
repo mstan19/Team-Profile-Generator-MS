@@ -1,0 +1,30 @@
+{
+  "name": "team-profile-generator-ms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstan19/Team-Profile-Generator-MS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mstan19/Team-Profile-Generator-MS/issues"
+  },
+  "homepage": "https://github.com/mstan19/Team-Profile-Generator-MS#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
