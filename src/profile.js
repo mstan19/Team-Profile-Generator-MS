@@ -37,7 +37,7 @@ let createManagerStr = (name,jobIcon,occupation,id,email,officeNum) =>
     </div>
         <ul class="list-group">
             <li class="list-group-item common"><a href="#" class="card-link">Id: ${id}</a></li>
-            <li class="list-group-item commonTwo"><a href="mailto:someone@example.com" class="card-link">Email: ${email}</a></li>
+            <li class="list-group-item commonTwo"><a href="mailto:${email}" class="card-link">Email: ${email}</a></li>
             <li class="list-group-item other"><a href="#" class="card-link">Office Number: ${officeNum}</a></li>
         </ul>
 </div>
@@ -53,7 +53,7 @@ let createEngineerStr = (name,jobIcon,occupation,id,email,GHusername) =>
             </div>
                 <ul class="list-group">
                     <li class="list-group-item common"><a href="#" class="card-link">Id: ${id}</a></li>
-                    <li class="list-group-item commonTwo"><a href="mailto:someone@example.com" class="card-link">Email: ${email}</a></li>
+                    <li class="list-group-item commonTwo"><a href="mailto:${email}" class="card-link">Email: ${email}</a></li>
                     <li class="list-group-item other"><a href="https://github.com/"  target="_blank" class="card-link">GitHub username: ${GHusername}</a></li>
                 </ul>
         </div>`
@@ -67,8 +67,8 @@ let createInternStr = (name,jobIcon,occupation,id,email,school) =>
             </div>
                 <ul class="list-group">
                     <li class="list-group-item common"><a href="#" class="card-link">Id: ${id}</a></li>
-                    <li class="list-group-item commonTwo"><a href="mailto:someone@example.com" class="card-link">Email: ${email}</a></li>
-                    <li class="list-group-item other"><a href="#" class="card-link">School:S ${school}</a></li>
+                    <li class="list-group-item commonTwo"><a href="mailto:${email}" class="card-link">Email: ${email}</a></li>
+                    <li class="list-group-item other"><a href="#" class="card-link">School: ${school}</a></li>
                 </ul>
         </div>`
 

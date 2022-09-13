@@ -15,11 +15,6 @@ describe("getId ()", () => {
         expect(result).toEqual(2);
     });
     it("Incorrect when input is not a number", () => {
-        const emp = () => new Employee("maze","2","wow@gmail");
-        const err = new Error ("Id needs to be positive integer")
-        expect(emp).toThrowError(err); 
-    });
-    it("Incorrect when input is not a number", () => {
         const emp = () => new Employee("maze","","wow@gmail");
         const err = new Error ("Id needs to be positive integer")
         expect(emp).toThrowError(err); 
