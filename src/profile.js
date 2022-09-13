@@ -8,7 +8,7 @@ let startStr = `
     <link
     rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="./dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <title>Team Profile</title>
 </head>
 <body>
@@ -30,15 +30,15 @@ let endStr =
 let createManagerStr = (name,jobIcon,occupation,id,email,officeNum) =>
 `
 <!-- //Manager -->
-<div class="card col-3 m-1 justify-content-center" >
+<div class="card col-4 m-1 justify-content-center" >
     <div class="card-header">
       <h5 class="card-title text-center">${name}</h5>
       <h6 class="card-subtitle mb-2 text-center">${occupation}</h6>
     </div>
         <ul class="list-group">
-            <li class="list-group-item common"><a href="#" class="card-link">${id}</a></li>
-            <li class="list-group-item commonTwo"><a href="#" class="card-link">${email}</a></li>
-            <li class="list-group-item other"><a href="#" class="card-link">${officeNum}</a></li>
+            <li class="list-group-item common"><a href="#" class="card-link">Id: ${id}</a></li>
+            <li class="list-group-item commonTwo"><a href="mailto:someone@example.com" class="card-link">Email: ${email}</a></li>
+            <li class="list-group-item other"><a href="#" class="card-link">Office Number: ${officeNum}</a></li>
         </ul>
 </div>
 `
@@ -46,29 +46,29 @@ let createManagerStr = (name,jobIcon,occupation,id,email,officeNum) =>
 let createEngineerStr = (name,jobIcon,occupation,id,email,GHusername) =>
 ` 
 <!-- //Engineer -->
-        <div class="card col-3 m-1 justify-content-center" >
+        <div class="card col-4 m-1 justify-content-center" >
             <div class="card-header ">
               <h5 class="card-title text-center">${name}</h5>
               <h6 class="card-subtitle mb-2 text-center">${occupation}</h6>
             </div>
                 <ul class="list-group">
-                    <li class="list-group-item common"><a href="#" class="card-link">${id}</a></li>
-                    <li class="list-group-item commonTwo"><a href="#" class="card-link">${email}</a></li>
-                    <li class="list-group-item other"><a href="#" class="card-link">${GHusername}</a></li>
+                    <li class="list-group-item common"><a href="#" class="card-link">Id: ${id}</a></li>
+                    <li class="list-group-item commonTwo"><a href="mailto:someone@example.com" class="card-link">Email: ${email}</a></li>
+                    <li class="list-group-item other"><a href="https://github.com/"  target="_blank" class="card-link">GitHub username: ${GHusername}</a></li>
                 </ul>
         </div>`
 
 let createInternStr = (name,jobIcon,occupation,id,email,school) =>
 `  
-<div class="card col-3 m-1 justify-content-center" >
+<div class="card col-4 m-1 justify-content-center" >
             <div class="card-header">
               <h5 class="card-title text-center">${name}</h5>
               <h6 class="card-subtitle mb-2 text-center">${occupation}</h6>
             </div>
                 <ul class="list-group">
-                    <li class="list-group-item common"><a href="#" class="card-link">${id}</a></li>
-                    <li class="list-group-item commonTwo"><a href="#" class="card-link">${email}</a></li>
-                    <li class="list-group-item other"><a href="#" class="card-link">${school}</a></li>
+                    <li class="list-group-item common"><a href="#" class="card-link">Id: ${id}</a></li>
+                    <li class="list-group-item commonTwo"><a href="mailto:someone@example.com" class="card-link">Email: ${email}</a></li>
+                    <li class="list-group-item other"><a href="#" class="card-link">School:S ${school}</a></li>
                 </ul>
         </div>`
 
