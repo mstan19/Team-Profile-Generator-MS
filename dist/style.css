@@ -1,0 +1,56 @@
+* {
+    font-family:"Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
+    font-size: 25px;
+    
+
+}
+.jumbotron {
+    background-color: black
+}
+
+
+.greeting {
+    color: rgb(189, 155, 67);
+}
+
+.card {
+    background-color: black
+
+}
+
+.card-header {
+    background-color: black;
+    border-bottom: 3px solid white;
+
+
+}
+
+.card-title {
+    color: rgb(189, 155, 67);
+    background-color: black
+
+
+}
+
+.list-group-item{
+    background-color: rgba(0, 0, 0, 0.705);
+}
+
+a  {
+    color: white;
+}
+.card-subtitle{
+    color: rgb(189, 155, 67);
+    background-color: black
+}
+
+.common {
+    border-bottom: 3px solid white;
+
+
+}
+
+.commonTwo {
+    border-bottom: 3px solid white;
+
+}
