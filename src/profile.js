@@ -72,8 +72,6 @@ let createInternStr = (name,jobIcon,occupation,id,email,school) =>
                 </ul>
         </div>`
 
-
-
 function addingStr(allManagers, allinterns, allEngineers) {
     // allManagers = [Manager{}, Manager{}, Manager{}]
     
